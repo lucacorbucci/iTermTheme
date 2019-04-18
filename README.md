@@ -1,6 +1,6 @@
 # My iTerm2 Setup
 
-![iTerm2 Setup](https://github.com/lucacorbucci/iTermTheme/blob/master/iterm.jpeg?raw=true)
+![iTerm2 Setup](https://github.com/lucacorbucci/iTermTheme/blob/master/iterm.png?raw=true)
 
 Sources:
 
