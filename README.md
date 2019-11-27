@@ -1,5 +1,7 @@
 # My iTerm2 Setup
 
+![Here](https://medium.com/@Tankado95/my-iterm2-setup-ed6cb1752f3b?source=your_stories_page---------------------------) you can find my Medium Post about this iTerm Theme.
+
 ![iTerm2 Setup](https://github.com/lucacorbucci/iTermTheme/blob/master/iterm.png?raw=true)
 
 Sources:
