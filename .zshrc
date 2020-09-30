@@ -1,6 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export TERM="xterm-256color"
+alias p="python"
+alias ga="git add ."
+alias gp="git push -u origin master"
+alias mp="mvn package"
+alias python="python3"
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/lucacorbucci/.oh-my-zsh
 
@@ -18,9 +26,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
-
-
-
 
 
 POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
@@ -45,16 +50,22 @@ POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=$'\u2502'
 PROMPT_BLANK="${POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX}\n"
 
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❱ "
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="${PROMPT_BLANK}%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="${PROMPT_BLANK}%F{014}\u2570%F{014} \xF0\x9F\x91\x89%f "
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context battery dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time  ram )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 
+POWERLEVEL9K_DIR_HOME_BACKGROUND='083'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='083'
+POWERLEVEL9K_DIR_ETC_BACKGROUND='083'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='083'
 
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d/%m/%y}"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='240'
+
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
 POWERLEVEL9K_TIME_BACKGROUND='white'
 POWERLEVEL9K_RAM_BACKGROUND='yellow'
 POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="white"
@@ -81,3 +92,35 @@ function title_text {
     echo -ne "\033]0;"$*"\007"
 }
 title_text Luca
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export PATH=$PATH:/Users/lucacorbucci/.npm-global/bin
+
+
+
+PATH="/Users/lucacorbucci/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/lucacorbucci/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/lucacorbucci/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/lucacorbucci/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/lucacorbucci/perl5"; export PERL_MM_OPT;
+
+
+export PATH="$PATH:/Users/lucacorbucci/Documents/Flutter/flutter/bin"
+export PATH="$PATH:/Users/lucacorbucci/Downloads/aria2-1.35.0/bin"
+
+if [ "$(command -v exa)" ]; then
+    unalias -m 'll'
+    unalias -m 'l'
+    unalias -m 'la'
+    unalias -m 'ls'
+    alias ls='exa -G  --color auto --icons -a -s type'
+    alias ll='exa -l --color always --icons -a -s type'
+fi
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat -pp --theme="Nord"'
+fi
+
+export ANDROID_HOME=/Users/{YourUsername}/Library/Android/sdk/
+alias run-emulator="$ANDROID_HOME/emulator/emulator @Pixel_XL_API_29"
