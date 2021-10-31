@@ -13,4 +13,3 @@ Sources:
 - https://github.com/dylanaraps/neofetch
 - https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 - https://github.com/MartinSeeler/iterm2-material-design
-
